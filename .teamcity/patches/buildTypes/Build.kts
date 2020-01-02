@@ -11,6 +11,12 @@ To apply the patch, change the buildType with id = 'Build'
 accordingly, and delete the patch script.
 */
 changeBuildType(RelativeId("Build")) {
+    params {
+        add {
+            param("my_new_parameter", "HOWDY!")
+        }
+    }
+
     expectSteps {
     }
     steps {
