@@ -1,6 +1,7 @@
 package patches.buildTypes
 
 import jetbrains.buildServer.configs.kotlin.v2018_2.*
+import jetbrains.buildServer.configs.kotlin.v2018_2.buildSteps.powerShell
 import jetbrains.buildServer.configs.kotlin.v2018_2.buildSteps.script
 import jetbrains.buildServer.configs.kotlin.v2018_2.ui.*
 
@@ -16,6 +17,14 @@ changeBuildType(RelativeId("Build")) {
         insert(0) {
             script {
                 scriptContent = "call my_cmd.bat"
+            }
+        }
+        insert(1) {
+            powerShell {
+                name = "PowerShell"
+                scriptMode = script {
+                    content = "${'$'}env:computername"
+                }
             }
         }
     }
