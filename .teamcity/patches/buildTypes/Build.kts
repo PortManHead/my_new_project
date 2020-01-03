@@ -37,7 +37,7 @@ changeBuildType(RelativeId("Build")) {
         insert(2) {
             script {
                 scriptContent = "time /t"
-                dockerImage = "my_image"
+                dockerImage = "my_container"
                 dockerImagePlatform = ScriptBuildStep.ImagePlatform.Windows
             }
         }
