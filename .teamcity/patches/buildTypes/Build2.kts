@@ -40,5 +40,10 @@ create(DslContext.projectId, BuildType({
         vcs {
         }
     }
+
+    dependencies {
+        snapshot(RelativeId("Build")) {
+        }
+    }
 }))
 
